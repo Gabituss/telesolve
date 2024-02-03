@@ -19,11 +19,17 @@ async def tasks_list_getter(dialog_manager: DialogManager, **kwargs) -> dict:
 
     for _task in tasks:
         _test = await test.find_test(_task.test_id)
-        as_str = f"Test {_test.test_name} "
-        if _task.mark == 0:
-            as_str += "in process..."
+        as_str = f"{_test.test_name} "
+
+        if _task.approved == 0:
+            as_str += "ждет подтверждения... ⏳"
+        elif _task.approved == 1:
+            as_str += "отклонен ❎"
         else:
-            as_str += f"finished, mark — {_task.mark}"
+            if _task.mark <= 0:
+                as_str += "ждет исполнения... ⏳"
+            else:
+                as_str += f"выполнен, оценка — {_task.mark} ✅"
         result["names"][_task.task_id] = as_str
 
     return result
@@ -48,6 +54,21 @@ async def test_info_getter(dialog_manager: DialogManager, **kwargs) -> dict:
     }
 
 
+async def task_getter(dialog_manager: DialogManager, **kwargs) -> dict:
+    task_id = dialog_manager.start_data["task_id"]
+    _task = await task.get_task(task_id)
+    _test = await test.find_test(_task.test_id)
+
+    return {
+        "name": _test.test_name,
+        "deadline": _task.deadline,
+        "login": _task.login,
+        "password": _task.password,
+        "status": ["Ожидает подтверждения", "Отклонен", "Подтвержден"][_task.approved],
+        "mark": ("Не выставлена" if _task.mark <= 0 else _task.mark),
+    }
+
+
 async def current_order_data_getter(dialog_manager: DialogManager, **kwargs) -> dict:
     _test = await test.find_test(dialog_manager.start_data["selected_id"])
     full_name_exists: bool = dialog_manager.dialog_data.get("full_name", None) is not None
@@ -67,9 +88,9 @@ async def current_order_data_getter(dialog_manager: DialogManager, **kwargs) -> 
         "deadline_time": dialog_manager.dialog_data.get("deadline_time", "N/A"),
         "login": dialog_manager.dialog_data.get("login", "N/A"),
         "password": dialog_manager.dialog_data.get("password", "N/A"),
-        "full_name_btn_text": ("Change full name" if full_name_exists else "Write full name"),
-        "deadline_date_btn_text": ("Change deadline date" if deadline_date_exists else "Select deadline date"),
-        "deadline_time_btn_text": ("Change deadline time" if deadline_time_exists else "Write deadline time"),
-        "write_login_btn_text": ("Change login" if login_exists else "Write login"),
-        "write_password_btn_text": ("Change password" if password_exists else "Write password"),
+        "full_name_btn_text": ("Изменить ФИО" if full_name_exists else "Ввести ФИО"),
+        "deadline_date_btn_text": ("Изменить дату дедлайна" if deadline_date_exists else "Выбрать дату дедлайна"),
+        "deadline_time_btn_text": ("Изменить время дедлайна" if deadline_time_exists else "Ввести время дедлайна"),
+        "write_login_btn_text": ("Изменить логин" if login_exists else "Ввести логин"),
+        "write_password_btn_text": ("Изменить пароль" if password_exists else "Ввести пароль"),
     }

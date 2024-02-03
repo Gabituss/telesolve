@@ -8,10 +8,6 @@ class UserMenuStates(StatesGroup):
     select_task = State()
 
 
-class AdminMenuStates(StatesGroup):
-    main = State()
-
-
 class OrderMenuStates(StatesGroup):
     info = State()
     write_data = State()
@@ -23,3 +19,9 @@ class OrderMenuStates(StatesGroup):
     write_login_data = State()
     write_login = State()
     write_password = State()
+
+
+class UpdateTaskMenuStates(StatesGroup):
+    main = State()
+    change_login = State()
+    change_password = State()
