@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from loguru import logger
 from bot.models import Test
 
@@ -40,11 +40,11 @@ async def find_test(test_id: int) -> Optional[Test]:
     return await Test.filter(test_id=test_id).first()
 
 
-async def get_all_tests(visible=True) -> list[Test]:
+async def get_all_tests(visible=True) -> List[Test]:
     return await Test.filter((Q(visible=visible) | Q(visible=True))).all()
 
 
-async def get_all_tests_names() -> list[str]:
+async def get_all_tests_names() -> List[str]:
     _tests = await Test.all()
     res = [_test.test_name for _test in _tests]
 

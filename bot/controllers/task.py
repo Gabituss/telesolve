@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from loguru import logger
 from bot.models import Task
 
@@ -27,11 +27,11 @@ async def remove_task(task_id: int):
     return await Task.filter(task_id=task_id).delete()
 
 
-async def get_all_tasks(show_hidden: bool = True) -> list[Task]:
+async def get_all_tasks(show_hidden: bool = True) -> List[Task]:
     return await Task.filter((Q(hidden=show_hidden) | Q(hidden=False)))
 
 
-async def get_user_tasks(user_id: int, show_hidden: bool = True) -> list[Task]:
+async def get_user_tasks(user_id: int, show_hidden: bool = True) -> List[Task]:
     return await Task.filter((Q(hidden=show_hidden) | Q(hidden=False)) & (Q(user_id=user_id))).all()
 
 

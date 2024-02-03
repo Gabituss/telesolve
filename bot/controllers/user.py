@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from loguru import logger
 from bot.models import User
 from datetime import time

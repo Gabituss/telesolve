@@ -5,52 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f26a151f-3af2-4801-81da-10f307bf5d56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Telesolve.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/botlogging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/callback.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/controllers/solver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/controllers/task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/controllers/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/controllers/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/dialogs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/getters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/states.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/admin/windows.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/dialogs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/getters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/states.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/widgets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/dialogs/user/windows.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/exceptions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/exceptions/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/admin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/admin/commands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/admin/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/handlers/user/commands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/mics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/worksheet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -258,7 +213,7 @@
       <workItem from="1706433466567" duration="9401000" />
       <workItem from="1706539177280" duration="20721000" />
       <workItem from="1706788153971" duration="6256000" />
-      <workItem from="1706964901072" duration="10137000" />
+      <workItem from="1706964901072" duration="10771000" />
     </task>
     <servers />
   </component>
