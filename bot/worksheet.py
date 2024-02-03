@@ -57,7 +57,7 @@ async def convert(_task: Task):
     ]
 
 
-async def add_tasks(tasks: list[Task], sheet, start):
+async def add_tasks(tasks, sheet, start):
     if len(tasks) <= 0:
         return
 
