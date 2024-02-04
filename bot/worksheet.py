@@ -14,14 +14,13 @@ def compare(l: Task, r: Task):
     l_val = (
         [0, -1, 1][l.approved],
         datetime.strptime(l.deadline, '%Y-%m-%d %H:%M'),
-        (-1 if r.mark == -1 else 0 if r.mark == 0 else 1),
+        min(l.mark, 1)
     )
 
     r_val = (
         [0, -1, 1][r.approved],
         datetime.strptime(r.deadline, '%Y-%m-%d %H:%M'),
-        (-1 if r.mark == -1 else 0 if r.mark == 0 else 1),
-        (0 if r.mark == -1 else 1)
+        min(r.mark, 1)
     )
 
     if l_val == r_val:
