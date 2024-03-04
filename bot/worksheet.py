@@ -45,7 +45,7 @@ async def convert(_task: Task):
     return [
         _test.test_name,
         _task.deadline,
-        f"{_task.full_name} [@{_user.username}]",
+        f"{_task.full_name} [@{_user.username if _user is not None else 'N/A'}]",
         _task.login,
         _task.password,
         _task.mark,

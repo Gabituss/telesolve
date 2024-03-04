@@ -27,7 +27,11 @@ upd = Updater("token.json")
 
 async def setup_user_id(callback: CallbackQuery, button: Button, dialog_manager: DialogManager):
     dialog_manager.dialog_data.update(user_id=callback.from_user.id)
-
+    await user.create_user(
+        dialog_manager.event.from_user.id,
+        dialog_manager.event.from_user.full_name,
+        dialog_manager.event.from_user.username
+    )
 
 async def on_test_selected(callback: CallbackQuery, widget: Any, dialog_manager: DialogManager, selected_item: str):
     _test = await test.find_test(int(selected_item))

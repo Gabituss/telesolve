@@ -45,7 +45,7 @@ async def task_data_getter(dialog_manager: DialogManager, **kwargs):
     return {
         "test_name": _test.test_name,
         "full_name": _task.full_name,
-        "username": _user.username,
+        "username": _user.username if _user is not None else 'N/A',
         "deadline": _task.deadline,
         "login": _task.login,
         "password": _task.password,

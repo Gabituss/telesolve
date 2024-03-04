@@ -4,7 +4,7 @@ from aiogram_dialog import DialogManager, StartMode, ShowMode
 from bot.dialogs.user.states import UserMenuStates
 
 from aiogram.types.error_event import ErrorEvent
-
+from bot.controllers import user
 
 async def on_unknown_intent(event: ErrorEvent, dialog_manager: DialogManager):
     logging.error("Restarting dialog: %s", event.exception)

@@ -39,15 +39,12 @@ async def cmd_manage(message: types.Message, command: CommandObject, dialog_mana
 
     await dialog_manager.start(ManageMenuStates.main, data={"task_id": task_id})
 
-
-async def cmd_remove_tasks(message: types.Message, command: CommandObject, dialog_manager: DialogManager):
+async def cmd_hide_all_tasks(message: types.Message, command: CommandObject, dialog_manager: DialogManager):
     tasks = await task.get_all_tasks()
     for _task in tasks:
-        await task.remove_task(_task.task_id)
-
+        await task.update_task(_task.task_id, hidden=True)
     await upd.update_tasks_list()
     await message.answer("OK")
-
 
 async def cmd_hide_tasks(message: types.Message, command: CommandObject, dialog_manager: DialogManager):
     tasks = await task.get_all_tasks()
@@ -101,13 +98,20 @@ async def cmd_decline_task(
     await callback.answer()
     await upd.update_tasks_list()
 
+async def cmd_remove_task(message: types.Message, command: CommandObject, dialog_manager: DialogManager):
+    task_id = int(command.args)
+   
+    
+    await task.update_task(task_id, hidden=True)
+    await message.answer("OK")
+    await upd.update_tasks_list()
 
 async def cmd_show_tasks(message: types.Message, command: CommandObject, dialog_manager: DialogManager):
     tasks = await task.get_all_tasks()
     for _task in tasks:
         _user = await user.get_user(_task.user_id)
         _test = await test.find_test(_task.test_id)
-        await message.answer(f"{_task.full_name} [@{_user.username}]\n"
+        await message.answer(f"{_task.full_name} [@{_user.username if _user is not None else 'N/A'}]\n"
                              f"test_name={_test.test_name}\n"
                              f"task_id={_task.task_id}\n"
                              f"task_mark={_task.mark}\n"
